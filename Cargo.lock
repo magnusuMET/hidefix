@@ -319,8 +319,7 @@ dependencies = [
 [[package]]
 name = "hdf5"
 version = "0.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bdcd9b131fd67bb827b386d0dc63d3e74196a14616ef800acf87ca5fef741a10"
+source = "git+https://github.com/mulimoen/hdf5-rust?branch=feature/static-multi-versions#46f50d73fc87ac1133c40b82742d458dd155a66d"
 dependencies = [
  "bitflags",
  "cfg-if",
@@ -337,9 +336,9 @@ dependencies = [
 [[package]]
 name = "hdf5-derive"
 version = "0.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a5a77ac6a41e6880594d506118c0b8bc665ec959fe4636e0c84809756d224820"
+source = "git+https://github.com/mulimoen/hdf5-rust?branch=feature/static-multi-versions#46f50d73fc87ac1133c40b82742d458dd155a66d"
 dependencies = [
+ "proc-macro-error",
  "proc-macro2",
  "quote",
  "syn",
@@ -348,8 +347,7 @@ dependencies = [
 [[package]]
 name = "hdf5-src"
 version = "0.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e01493db39ddc0519cf2a83d620d2c037fee60f4fed724cb72dc23763f1727a8"
+source = "git+https://github.com/mulimoen/hdf5-rust?branch=feature/static-multi-versions#46f50d73fc87ac1133c40b82742d458dd155a66d"
 dependencies = [
  "cmake",
  "libz-sys",
@@ -358,8 +356,7 @@ dependencies = [
 [[package]]
 name = "hdf5-sys"
 version = "0.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4842d5980dc311a7c8933c7b45534fdae84df5ae7939a0ae8e449a56d4beb3d2"
+source = "git+https://github.com/mulimoen/hdf5-rust?branch=feature/static-multi-versions#46f50d73fc87ac1133c40b82742d458dd155a66d"
 dependencies = [
  "hdf5-src",
  "libc",
@@ -375,8 +372,7 @@ dependencies = [
 [[package]]
 name = "hdf5-types"
 version = "0.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b47268c0dfb499b1ffe5638b6e7694e7a87fe49fb92eca998a4346e5483e428f"
+source = "git+https://github.com/mulimoen/hdf5-rust?branch=feature/static-multi-versions#46f50d73fc87ac1133c40b82742d458dd155a66d"
 dependencies = [
  "ascii",
  "cfg-if",
@@ -408,10 +404,12 @@ dependencies = [
  "futures-core",
  "futures-util",
  "hdf5",
+ "hdf5-src",
  "hdf5-sys",
  "itertools",
  "libc",
  "libdeflater",
+ "libz-sys",
  "log",
  "lru",
  "ndarray",
@@ -501,6 +499,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6f35facd4a5673cb5a48822be2be1d4236c1c99cb4113cab7061ac720d5bf859"
 dependencies = [
  "cc",
+ "cmake",
+ "libc",
  "pkg-config",
  "vcpkg",
 ]
@@ -729,6 +729,29 @@ checksum = "e17d47ce914bf4de440332250b0edd23ce48c005f59fab39d3335866b114f11a"
 dependencies = [
  "thiserror",
  "toml",
+]
+
+[[package]]
+name = "proc-macro-error"
+version = "1.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "da25490ff9892aab3fcf7c36f08cfb902dd3e71ca0f9f9517bea02a73a5ce38c"
+dependencies = [
+ "proc-macro-error-attr",
+ "proc-macro2",
+ "quote",
+ "version_check",
+]
+
+[[package]]
+name = "proc-macro-error-attr"
+version = "1.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a1be40180e52ecc98ad80b184934baf3d0d29f979574e439af5a55274b35f869"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "version_check",
 ]
 
 [[package]]
